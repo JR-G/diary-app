@@ -6,9 +6,9 @@ feature 'Diary entries' do
 
     scenario 'it adds a diary entry' do
         visit '/add'
-        fill_in :entry, with: "Week 4"
+        fill_in('entry', with: "Week 4")
         click_button 'Submit'
-        expect(page).to have_content "week 4"
+        expect(page).to have_content "Week 4"
     end
 
 end

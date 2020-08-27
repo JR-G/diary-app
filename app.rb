@@ -9,5 +9,10 @@ class Diary < Sinatra::Base
     erb :add
   end
 
+  post '/' do
+    $entry = params[:entry]
+    redirect '/'
+  end
+
   run! if app_file == $0
 end
