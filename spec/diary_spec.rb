@@ -12,6 +12,7 @@ describe Diary do
 		it 'adds an entry to the diary' do
 			Diary.list
 			entry = Diary.add("Week 5")
+			p entry
 			expect(entry).to include "Week 5"
 
 		end

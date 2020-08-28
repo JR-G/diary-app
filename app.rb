@@ -1,5 +1,6 @@
 require 'sinatra/base'
-require_relative './diary_setup'
+require './lib/diary'
+#require_relative './diary_setup'
 
 class DiaryApp < Sinatra::Base
   get '/' do
@@ -8,8 +9,8 @@ class DiaryApp < Sinatra::Base
   end
 
   get '/diary' do
-    @diary = Diary.list
-    p @diary
+    Diary.create_list
+    @diary = Diary.return_list
     erb :index
   end
 
@@ -19,8 +20,6 @@ class DiaryApp < Sinatra::Base
 
   post '/diary' do
     Diary.add(params[:entry])
-    p Diary
-    p params
     redirect '/diary'
   end
 
