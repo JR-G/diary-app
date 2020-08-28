@@ -7,7 +7,7 @@ require 'capybara/rspec'
 require 'rspec'
 require 'shotgun'
 
-Capybara.app = Diary
+Capybara.app = DiaryApp
 
 
 

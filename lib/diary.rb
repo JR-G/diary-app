@@ -1,12 +1,12 @@
 class Diary
 
   def self.list
-   $list = [ "Week 4" ]
+   @list = [ "Week 4" ]
   
   end
 
   def self.add(entry)
-    $list << entry
+    @list << entry
   end
 
 end

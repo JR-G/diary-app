@@ -10,12 +10,11 @@ describe Diary do
 
 	describe '.add' do
 		it 'adds an entry to the diary' do
-			diary = Diary.add("Week 5")
-			p diary
-			expect(diary.list).to include "Week 5"
+			Diary.list
+			entry = Diary.add("Week 5")
+			expect(entry).to include "Week 5"
 
 		end
 	end
-
 end
  

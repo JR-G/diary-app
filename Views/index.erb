@@ -1,3 +1,9 @@
 <h1>My Makers journey</h1>
 
-<%= $entry %>
+<ul>
+<% @diary.each do |entry| %>
+  <li>
+  <%= entry %>
+  </li>
+<% end %>
+</ul>

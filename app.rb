@@ -1,7 +1,15 @@
 require 'sinatra/base'
+require_relative './diary_setup'
 
-class Diary < Sinatra::Base
+class DiaryApp < Sinatra::Base
   get '/' do
+    "bookmarks"
+    # erb :index
+  end
+
+  get '/diary' do
+    @diary = Diary.list
+    p @diary
     erb :index
   end
 
@@ -9,9 +17,11 @@ class Diary < Sinatra::Base
     erb :add
   end
 
-  post '/' do
-    $entry = params[:entry]
-    redirect '/'
+  post '/diary' do
+    Diary.add(params[:entry])
+    p Diary
+    p params
+    redirect '/diary'
   end
 
   run! if app_file == $0
